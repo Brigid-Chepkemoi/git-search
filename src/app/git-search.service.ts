@@ -9,7 +9,7 @@ import { environment } from "./../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
-export class GitSerchService {
+export class GitSearchService {
   userProfile: User;
   url = 'https://api.github.com/users/'
   constructor(private http: HttpClient, private router: Router) {

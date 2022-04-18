@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-
+import { User } from '../user';
+import { Repositories } from "../repositories";
+import { HttpClient } from "@angular/common/http";
+import { Interrepo } from '../repointerface';
+import { Interuser } from '../userinterface';
+import { GitSearchService } from '../git-search.service';
+import { RepoGitService } from '../repo-git.service';
+import { NgForm } from '@angular/forms';
 
 
 
@@ -12,7 +19,8 @@ import { Router } from "@angular/router";
 export class GitsearchFormComponent implements OnInit {
   search!:string;
   constructor(
-    
+    private gitService: GitSearchService,
+    private gitRepo: RepoGitService,
     private router: Router
   ) { }
   ngOnInit(): void {
@@ -21,7 +29,10 @@ export class GitsearchFormComponent implements OnInit {
   onSubmit() {
      console.log(this.search)
   
-  
+      this.gitRepo.repoArr = [];
+
+      this.gitService.getSearchResults(this.search);
+      this.gitRepo.getRepoDetails(this.search);
       this.router.navigate(["repo"]);
     
   }
