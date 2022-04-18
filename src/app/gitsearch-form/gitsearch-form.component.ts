@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+
+
+
 
 @Component({
   selector: 'app-gitsearch-form',
@@ -6,10 +10,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gitsearch-form.component.css']
 })
 export class GitsearchFormComponent implements OnInit {
-
-  constructor() { }
-
+  search!:string;
+  constructor(
+    
+    private router: Router
+  ) { }
   ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
+  onSubmit() {
+     console.log(this.search)
+  
+  
+      this.router.navigate(["repo"]);
+    
+  }
+ 
 
 }
