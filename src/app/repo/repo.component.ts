@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+
+
+
+
 
 @Component({
   selector: 'app-repo',
@@ -7,9 +12,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepoComponent implements OnInit {
 
-  constructor() { }
+  rep: any[] = [];
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
