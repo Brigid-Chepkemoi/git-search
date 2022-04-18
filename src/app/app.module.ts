@@ -7,6 +7,8 @@ import { NavComponent } from './nav/nav.component';
 import { GitsearchFormComponent } from './gitsearch-form/gitsearch-form.component';
 import { RepoComponent } from './repo/repo.component';
 import { SearchGitComponent } from './search-git/search-git.component';
+import { TimePipe } from './time.pipe';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import { SearchGitComponent } from './search-git/search-git.component';
     GitsearchFormComponent,
     RepoComponent,
     SearchGitComponent,
+    TimePipe,
+    ErrorComponent,
  
   ],
   imports: [
