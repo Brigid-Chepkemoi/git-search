@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { GitsearchFormComponent } from './gitsearch-form/gitsearch-form.component';
 import { RepoComponent } from './repo/repo.component';
+import { SearchGitComponent } from './search-git/search-git.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { RepoComponent } from './repo/repo.component';
     NavComponent,
     GitsearchFormComponent,
     RepoComponent,
+    SearchGitComponent,
  
   ],
   imports: [
