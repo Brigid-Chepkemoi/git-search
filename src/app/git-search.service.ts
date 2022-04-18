@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from "@angular/router";
 
-import { User } from './user';
-import { Repositories } from './repositories';         
+import { User } from './user';      
 import { HttpClient } from "@angular/common/http";
 import { environment } from "./../environments/environment";
 
@@ -19,7 +18,7 @@ export class GitSerchService {
   getSearchResults(search:string) {
     let promise = new Promise((resolve, reject) => {
       this.http
-        .get<any>(this.url + search + "?access_token'=" + environment.personal_AccessToken)
+        .get<any>(this.url + search + "?access_token'=" + environment.PersonalAccessToken)
         .toPromise()
         .then(
           (response:any) =>{ 
