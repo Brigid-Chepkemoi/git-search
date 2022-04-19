@@ -1,27 +1,58 @@
-# Git
+# GitSearch App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.4.
+![GitSearch App Image](src/assets/gitsearchapp.png)
 
-## Development server
+### By: Brigid Chepkemoi
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Description
 
-## Build
+This is an Angular project application that users can search github profiles/usernames and get the descriptions of the searched party together with their public repositories.
+## Live Link
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Setup/Installation Requirements
+install angular CLI in your terminal
+Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-## Running unit tests
+## BDD
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The user is able to;
 
-## Running end-to-end tests
+- view username
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- view public repositories
 
-## Further help
+- view avatar,location,followers, following and number of repos.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- search a github user using their username
+
+## Technologies
+
+- HTML5
+- CSS3
+- Boostrap
+- JavaScript
+- Angular
+- Typescript
+
+## Licence
+
+MIT License
+
+Copyright (c) Brigid Chepkemoi- [MIT Licence](LICENSE)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
