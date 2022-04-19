@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router } from "@angular/router";
+import{map} from "rxjs/operators"
 
 import { User } from './user';      
 import { HttpClient } from "@angular/common/http";
@@ -10,39 +10,33 @@ import { environment } from "./../environments/environment";
   providedIn: 'root'
 })
 export class GitSearchService {
-  userProfile: User;
-  url = 'https://api.github.com/users/'
-  constructor(private http: HttpClient, private router: Router) {
-    this.userProfile = new User("", "", "", "", 0, 0, 0, "", "", 0, "");
-  }
-  getSearchResults(search:string) {
-    let promise = new Promise((resolve, reject) => {
-      this.http
-        .get<any>(this.url + search + "?access_token'=" + environment.PersonalAccessToken)
-        .toPromise()
-        .then(
-          (response:any) =>{ 
-            this.userProfile.userName = response.login;
-            this.userProfile.name = response.name;
-            this.userProfile.bio = response.bio;
-            this.userProfile.followers = response.followers;
-            this.userProfile.following = response.following;
-            this.userProfile.location = response.location;
-            this.userProfile.socialMedia = response.twitter_username;
-            this.userProfile.repositories = response.public_repos;
-            this.userProfile.avatarUrl = response.avatar_url;
-            this.userProfile.repo_url = response.repos_url;
-            console.log(response)
-          },
+  username: string;
+  // userProfile: User;
+  // result:any
 
-          (error) => {
-            if (error.status) {
-              this.router.navigate(["/err"]);
-            }
-            reject(error);
-          }
-        );
-    });
-    return promise;
+  constructor(private http: HttpClient) {
+    console.log('Github Service Ready...');
+    this.username =  'brigid-chepkemoi';
+
   }
+  getUser() {
+    interface ApiResponse{
+
+    }
+    // let promise = new Promise<void>((resolve, reject)=>{
+    return this.http.get('https://api.github.com/users/' + this.username)
+    .pipe(map(result => result));
+    // })
+
+
+
+
+  }
+  getRepos() {
+    return this.http.get(' https://api.github.com/users/' + this.username + '/repos')
+    .pipe(map(result=> result));
+}
+updateUser(username: string) {
+  this.username = username;
+}
 }

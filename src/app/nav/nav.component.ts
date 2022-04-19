@@ -1,16 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { GitsearchFormComponent } from '../gitsearch-form/gitsearch-form.component';
+// import { GitsearchFormComponent } from '../gitsearch-form/gitsearch-form.component';
+import { GitSearchService } from '../git-search.service';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
+
+
+  // providers: [GitSearchService]
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  username!: string;
+  user: any= [];
+  repositories: any= [];
 
-  ngOnInit(): void {
+  constructor(private Service: GitSearchService) {
+    this.Service.getUser().subscribe(user => {
+      console.log(user);
+      this.user = user;
+    });
+    this.Service.getRepos().subscribe(repositories => {
+      this.repositories = repositories;
+    });
   }
+  ngOnInit() {}
+  //calling the final information regarding user
+   searchUser() {
+     this.Service.updateUser(this.username);
+     this.Service.getUser().subscribe(user => {
+       this.user = user;
+     });
+     this.Service.getRepos().subscribe(repositories => {
+       this.repositories = repositories;
+     });
 
+   }
 }
