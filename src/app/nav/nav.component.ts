@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GitsearchFormComponent } from '../gitsearch-form/gitsearch-form.component';
 
 @Component({
   selector: 'app-nav',

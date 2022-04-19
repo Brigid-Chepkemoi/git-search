@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-
-
+import { User } from '../user';
+import { GitSearchService } from '../git-search.service';
+import { RepoGitService } from '../repo-git.service';
 
 
 
@@ -11,9 +11,15 @@ import { Router } from "@angular/router";
   styleUrls: ['./repo.component.css']
 })
 export class RepoComponent implements OnInit {
-
+  userProfile!: User;
   rep: any[] = [];
-  constructor() {}
+  constructor(
+    private gitService: GitSearchService,
+    private gitRepoService: RepoGitService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userProfile = this.gitService.userProfile;
+    this.rep = this.gitRepoService.repoArr;
+  }
 }
