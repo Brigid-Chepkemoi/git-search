@@ -7,7 +7,6 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-import { ErrorComponent } from './error/error.component';
 import { HighlightDirective } from './highlight.directive';
 import { GitSearchService } from './git-search.service';
 import { DatePipePipe } from './date-pipe.pipe';
@@ -19,7 +18,6 @@ import { DatePipePipe } from './date-pipe.pipe';
   declarations: [
     AppComponent,
     NavComponent,
-    ErrorComponent,
     HighlightDirective,
     DatePipePipe,
  
