@@ -2,18 +2,18 @@ import { Component, NgModule, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { GitSearchService } from '../git-search.service';
 import { RepoGitService } from '../repo-git.service';
-import { FormsModule } from '@angular/forms';
 
 
 
-// @Component({
-//   selector: 'app-gitsearch-form',
-//   templateUrl: './gitsearch-form.component.html',
-//   styleUrls: ['./gitsearch-form.component.css']
-// })
-@NgModule({
-  imports:[FormsModule]
+
+@Component({
+  selector: 'app-gitsearch-form',
+  templateUrl: './gitsearch-form.component.html',
+  styleUrls: ['./gitsearch-form.component.css']
 })
+// @NgModule({
+//   imports:[FormsModule]
+// })
 export class GitsearchFormComponent implements OnInit {
   search!:string;
   constructor(
